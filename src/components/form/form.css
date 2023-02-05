@@ -1,0 +1,32 @@
+.dialog-form-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(119, 68, 5, 0.596);
+    height: 20rem;
+    width: 30rem;
+    border-radius: 50px;
+    box-shadow: 0.25rem 0.05rem 3rem 0.05rem black;
+    transition: all ease 0.3s ;
+    margin-top: 3rem;
+}
+.dialog-form-box:hover{
+    box-shadow: 0.25rem 0.05rem 4rem 0.05rem black;
+}
+.dialog-form-box form input{
+    border-radius: 10px;
+    margin: 0.4rem 0.5rem;
+    padding: 0.4rem;
+    outline:none;
+}
+.dialog-form-box form input:focus{
+    border-color: rgba(0, 255, 255, 0.288);
+    outline: 6px rgba(0, 255, 255, 0.288);
+    outline-style: inset;
+    background-color: rgba(127, 255, 212, 0.486);
+}
+.dialog-form-box form .f-label{
+    font-weight: 900;
+    font-size: x-large;
+    color: rgba(5, 10, 14, 0.637);
+}

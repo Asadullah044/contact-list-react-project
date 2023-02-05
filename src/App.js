@@ -1,28 +1,33 @@
-import './App.css';
-import Article from './components/article/Article';
-import Cta from './components/cta/Cta';
-import Brand from './components/brand/Brand';
-import Navbar from './components/navbar/Navbar';
-import Feature from './components/feature/Feature'
-import {Footer, Blog , Possibility, Features , Whatgpt , Header} from './containers/index.js'
-
+import React, { useState, useEffect } from 'react';
+import Contactlist from './components/contactList/contactlist.js';
+import Navbar from './components/navbar/Navbar.js';
+import Form from './components/form/form.js';
 
 function App() {
+  const [list, setlist] = useState([
+    {
+      name: 'Bushra',
+      email: 'Yasin'
+    },
+  ]);
+  
+  useEffect(()=>{
+    let oldlist = JSON.parse(localStorage.getItem('list'));
+    oldlist?setlist(oldlist):setlist([]);
+  },[]);
+
+  useEffect(()=>{localStorage.setItem('list',JSON.stringify(list))}, [list]);
+
+
   return (
-    <div className="App">
-      <div className='gradient__bg'>
-        <Navbar />
-        <Header />
+    <>
+      <Navbar />
+      <div className="main">
+        <div className='form'><Form setlist={setlist} list={list} /></div>
+        <div className='Contact'><Contactlist list={list} /></div>
       </div>
-      <Brand />
-      <Whatgpt />
-      <Features />
-      <Possibility />
-      <Cta />
-      <Blog />
-      <Footer />
-    </div>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App

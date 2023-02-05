@@ -1,0 +1,18 @@
+.contactcard{
+    width: 70vw;
+    background-color: rgba(0, 0, 0, 0.932);
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+.contactcard h2{
+margin: 0.5rem auto;
+font-size: xx-large;
+color: aliceblue;
+}
+.contactcard span{
+    color: aliceblue;
+    margin-left: auto;
+    margin-right: auto;
+}
